@@ -1,10 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://cjkhtya18ban6"]
+[gd_scene load_steps=14 format=3 uid="uid://cjkhtya18ban6"]
 
 [ext_resource type="PackedScene" uid="uid://jhfgdjdj5hub" path="res://scenes/player.tscn" id="1_j6hbn"]
 [ext_resource type="Texture2D" uid="uid://l2a4u7lym1sx" path="res://assets/sprites/world_tileset.png" id="1_lo1be"]
 [ext_resource type="PackedScene" uid="uid://bd4t01s5pthgm" path="res://scenes/platform.tscn" id="3_2dus4"]
 [ext_resource type="PackedScene" uid="uid://cubj531lll1eg" path="res://scenes/coin.tscn" id="4_pfigk"]
 [ext_resource type="PackedScene" uid="uid://dlonlj0i7oq2q" path="res://scenes/kill_zone.tscn" id="5_ta040"]
+[ext_resource type="PackedScene" uid="uid://rtx013ly5n1x" path="res://scenes/slime.tscn" id="6_pg43h"]
+[ext_resource type="PackedScene" uid="uid://wl8bqh3iio2r" path="res://scenes/invisible_wall.tscn" id="7_66qcj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4hoax"]
 texture = ExtResource("1_lo1be")
@@ -564,3 +566,34 @@ position = Vector2(63, 147)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
 shape = SubResource("WorldBoundaryShape2D_juq54")
+
+[node name="Enemys" type="Node" parent="."]
+
+[node name="Slime" parent="Enemys" instance=ExtResource("6_pg43h")]
+position = Vector2(215, 81)
+
+[node name="Slime2" parent="Enemys" instance=ExtResource("6_pg43h")]
+position = Vector2(648, 79)
+
+[node name="Slime3" parent="Enemys" instance=ExtResource("6_pg43h")]
+position = Vector2(456, -207)
+
+[node name="Slime4" parent="Enemys" instance=ExtResource("6_pg43h")]
+position = Vector2(95, -337)
+
+[node name="InvisWall" type="Node" parent="."]
+
+[node name="InvisibleWall" parent="InvisWall" instance=ExtResource("7_66qcj")]
+position = Vector2(159, 73)
+
+[node name="InvisibleWall2" parent="InvisWall" instance=ExtResource("7_66qcj")]
+position = Vector2(290, 75)
+
+[node name="InvisibleWall3" parent="InvisWall" instance=ExtResource("7_66qcj")]
+position = Vector2(62, -338)
+
+[node name="InvisibleWall4" parent="InvisWall" instance=ExtResource("7_66qcj")]
+position = Vector2(130, -339)
+
+[node name="InvisibleWall5" parent="InvisWall" instance=ExtResource("7_66qcj")]
+position = Vector2(623, 73)
